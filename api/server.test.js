@@ -43,11 +43,9 @@ describe("server", () => {
   });
 
   describe("Delete /", () => {
-    it("should return 204 No Content, when deleting data", () => {
-      return request(server)
-        .delete("/animals/1")
-        .expect(res.status)
-        .toBe(204);
+    it("should return 204 No Content, when deleting data", async () => {
+      let res = await request(server).delete("/animals/1");
+      expect(res.status).toBe(204);
     });
   });
 });

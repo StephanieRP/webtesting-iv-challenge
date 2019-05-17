@@ -12,7 +12,7 @@ describe("animals database", () => {
 
       const animal = await db("animals");
 
-      expect(animal).toHaveLength(0);
+      expect(animal).toHaveLength(1);
     });
   });
 
@@ -28,11 +28,10 @@ describe("animals database", () => {
 
   describe("confirming removeAnimal() works", () => {
     it("should remove an animal based on id from database", async () => {
-      await animals.removeAnimal();
-
+      let id = 1;
+      await animals.removeAnimal(id);
       const animal = await db("animals");
-
-      expect(animal).toHaveLength(1);
+      expect(animal).toHaveLength(0);
     });
   });
 });
