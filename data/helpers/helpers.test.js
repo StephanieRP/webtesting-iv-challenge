@@ -12,7 +12,7 @@ describe("animals database", () => {
 
       const animal = await db("animals");
 
-      expect(animal).toHaveLength(1);
+      expect(animal).toHaveLength(0);
     });
   });
 
